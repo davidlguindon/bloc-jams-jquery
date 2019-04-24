@@ -1,4 +1,5 @@
-class Helper{
+{
+  class Helper{
   playPauseAndUpdate (song){
     player.playPause(song);
     const duration = player.getDuration();
@@ -6,3 +7,4 @@ class Helper{
   }
 }
 const helper = new Helper();
+}

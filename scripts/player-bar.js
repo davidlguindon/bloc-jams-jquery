@@ -36,9 +36,12 @@ setInterval(() => {
     return;
   }
   const currentTime = player.getTime();
+  var currentTime2 = Math.trunc(currentTime/60) + ':' + Math.round(currentTime - Math.trunc(currentTime/60)*60);
   const duration = player.getDuration();
+  var duration2 = Math.trunc(duration/60) + ':' + Math.round(duration - Math.trunc(duration/60)*60);
   const percent = (currentTime / duration) * 100;
-  $('#time-control .current-time').text(currentTime);
+  $('#time-control .current-time').text(currentTime2);
   $('#time-control input').val(percent);
+  $('#time-control .total-time').text(duration2);
 }, 1000);
 }
