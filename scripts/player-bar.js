@@ -36,9 +36,19 @@ setInterval(() => {
     return;
   }
   const currentTime = player.getTime();
-  var currentTime2 = Math.trunc(currentTime/60) + ':' + Math.round(currentTime - Math.trunc(currentTime/60)*60);
+  var currentTime2 = Math.trunc(currentTime/60)
+  currentTime2 += ':'
+  if(Math.round(currentTime - Math.trunc(currentTime/60)*60)<10){
+    currentTime2 += '0';
+  }
+  currentTime2 += Math.round(currentTime - Math.trunc(currentTime/60)*60);
   const duration = player.getDuration();
-  var duration2 = Math.trunc(duration/60) + ':' + Math.round(duration - Math.trunc(duration/60)*60);
+  var duration2 = Math.trunc(duration/60)
+  duration2 += ':'
+  if(Math.round(duration - Math.trunc(duration/60)*60)<10){
+    duration2 += '0';
+  }
+  duration2 += Math.round(duration - Math.trunc(duration/60)*60);
   const percent = (currentTime / duration) * 100;
   $('#time-control .current-time').text(currentTime2);
   $('#time-control input').val(percent);

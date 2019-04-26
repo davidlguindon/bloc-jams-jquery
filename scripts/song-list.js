@@ -14,13 +14,15 @@
       </tr>
       `);
       $('#song-list').append(song.element);
-    });
-  }
+
+
   song.element.on('click', event => {
-    alert('test');
     player.playPause(song);
     $('button#play-pause').attr('playState', player.playState);
   });
-  $('button#song-box').on('click', function() {
-    alert('test');
-  });
+  // $('button#song-box').on('click', function() {
+  //   alert('test');
+  // });
+
+});
+}
