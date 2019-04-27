@@ -1,5 +1,6 @@
 {
   album.songs.forEach( (song, index) => {
+    const totalTime = player.prettyTime(song.duration);
     song.element = $(`
       <tr class='song-box'>
       <td>
@@ -10,7 +11,7 @@
       </button>
       </td>
       <td>${song.title}</td>
-      <td>${Math.round(song.duration)} s</td>
+      <td>${totalTime}</td>
       </tr>
       `);
       $('#song-list').append(song.element);
@@ -23,6 +24,5 @@
   // $('button#song-box').on('click', function() {
   //   alert('test');
   // });
-
 });
 }
